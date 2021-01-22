@@ -15,16 +15,16 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     RegisterComponent,
     UserDasboardComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
