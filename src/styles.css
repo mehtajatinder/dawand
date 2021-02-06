@@ -80,3 +80,6 @@ html,body{
     border-color: #fff;
     color: #3aaf9f
 }
+label.form-label{
+    margin-bottom: .2rem;
+}
