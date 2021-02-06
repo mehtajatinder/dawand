@@ -1,17 +1,29 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import { LandingPageComponent } from '../landing-page/landingPage.component';
-import { LoginComponent } from '../login/login.component';
-import { RegisterComponent } from '../register/register.component';
 
 const routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('../account/register/register.module').then((m) => {
+        return m.RegisterModule;
+      }),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('../account/login/login.module').then((m) => {
+        return m.LoginModule;
+      }),
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
   exports: [RouterModule],
 })
 export class routerModule {}
