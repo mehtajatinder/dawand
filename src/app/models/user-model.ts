@@ -2,6 +2,7 @@ export class UserData {
     firstName: string
     lastName: string
     password: string
+    confirmPassword?: string
     email: string
     gender: string
     fathersName?: string

@@ -5,30 +5,38 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { RegisterComponent } from './register/register.component';
-import { UserDasboardComponent } from './user-dasboard/user-dasboard.component';
-import { LoginComponent } from './login/login.component';
+// import { RegisterComponent } from './register/register.component';
+// import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LandingPageComponent } from './landing-page/landingPage.component';
+import { routerModule } from './router/router.module';
+import { DataServiceService } from './Services/data-service.service';
+// import { LoginComponent } from './account/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    UserDasboardComponent,
-    LoginComponent
+    LandingPageComponent,
+    // RegisterComponent,
+    // LoginComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     CarouselModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    TabsModule.forRoot(),
+    routerModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DataServiceService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

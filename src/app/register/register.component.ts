@@ -4,8 +4,7 @@ import {UserData} from '../models/user-model'
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: './register.component.html'
 })
 export class RegisterComponent implements OnInit {
 
@@ -27,11 +26,7 @@ export class RegisterComponent implements OnInit {
     return this.httpClient.get(this.apiUrl)
   }
 
-  // return this.httpClient.post(
-  //   Appconfig.apiUrl + `/SMA/save/${adviserid}`,
-  //   model
 
-  // )
   RegisterUSer(){
     //console.log(this.userData)
     return this.httpClient.post(this.apiUrl+`/registeruser`, this.userData).subscribe(res=>{
