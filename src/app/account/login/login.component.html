@@ -1,53 +1,77 @@
-<div class="wrapper set bg-grey" style="height: calc(100vh - 50px); display:flex; align-items: center;">
-  <div class="container" style="padding: 0px 190px;">
-    <div class="shadowBordered bg-white ">
-
+<div
+  class="wrapper set bg-grey"
+  style="height: calc(100vh - 50px); display: flex; align-items: center"
+>
+  <div class="container" style="padding: 0px 190px">
+    <div class="shadowBordered bg-white">
       <div class="row no-gutters">
         <div class="col-md-5 bg-color-primary">
           <div class="vCenteredSection vhFull">
             <div class="set text-center">
               <h2 class="text-center color-white">Welcome Back!</h2>
-              <div class="color-white mt-3 mb-3 fontL font13">To keep connected with us please<br> login
-                with your personal Info</div>
-              <button type="button"
-                class="btn btn-outline-primary btn-sm pl-5 pr-5 pt-2 pb-2  btn-rounded-16 mt-3 btn-singIn">REGISTER</button>
+              <div class="color-white mt-3 mb-3 fontL font13">
+                To keep connected with us please<br />
+                login with your personal Info
+              </div>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm pl-5 pr-5 pt-2 pb-2 btn-rounded-16 mt-3 btn-singIn"
+                [routerLink]="'/register'"
+              >
+                REGISTER
+              </button>
             </div>
           </div>
         </div>
 
         <div class="col-md-7">
+          <form (ngSubmit)="LoginUser()" #loginForm="ngForm">
+            <div class="row" style="padding: 85px 24px">
+              <div class="text-center col-md-12 mb-4">
+                <h2 class="color-primary">Login</h2>
+              </div>
+              <div class="mb-4 col-md-12">
+                <!-- <label for="fName" class="form-label">UserName </label> -->
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fName"
+                  autocomplete="off"
+                  placeholder="Phone Number or Email"
+                  ngModel
+                  required
+                  name="username"
+                />
+              </div>
 
-          <div class="row" style="padding:85px 24px">
-            <div class="text-center col-md-12 mb-4">
-              <h2 class="color-primary">Login</h2>
+              <div class="mb-4 col-md-12">
+                <!-- <label for="pass" class="form-label">Set Password </label> -->
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pass"
+                  placeholder="Password"
+                  ngModel
+                  required
+                  name="password"
+                />
+              </div>
+              <div class="mt-2 text-center col-md-12">
+                <button
+                  type="submit"
+                  class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"
+                  [disabled]="!loginForm.valid"
+                >
+                  LOGIN
+                </button>
+              </div>
             </div>
-            <div class="mb-4 col-md-12">
-              <!-- <label for="fName" class="form-label">UserName </label> -->
-              <input type="text" class="form-control" id="fName" autocomplete="off"  placeholder="Phone Number or Email" [(ngModel)]="userLogin.loginId">
-            </div>
-
-
-
-            <div class="mb-4 col-md-12">
-              <!-- <label for="pass" class="form-label">Set Password </label> -->
-              <input type="password" class="form-control" id="pass" placeholder="Password" [(ngModel)]="userLogin.loginPassword">
-            </div>
-            <div class="mt-2 text-center col-md-12">
-              <button type="button" class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"
-                (click)="loginUser()">LOGIN</button>
-            </div>
-
-
-
-          </div><!-- end of row-->
-
+            <!-- end of row-->
+          </form>
         </div>
-
-
-
-
-
-
+      </div>
     </div>
-  </div><!-- end of container-->
-</div><!-- end of wrapper-->
+    <!-- end of container-->
+  </div>
+  <!-- end of wrapper-->
+</div>

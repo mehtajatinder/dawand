@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AccountService } from '../account.service';
-import { DataServiceService } from 'src/app/Services/data-service.service';
-import { UserData } from '../../models/user-model';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -11,17 +8,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(
-    private accountService: AccountService,
-    private httpClient: HttpClient,
-    private dataService: DataServiceService
-  ) {}
+  constructor(private accountService: AccountService) {}
 
   public userData: any;
   public isShowThanks!: boolean;
   ngOnInit(): void {}
 
-  register(regForm: NgForm) {
+  RegisterUser(regForm: NgForm) {
     if (!regForm.valid) {
       return;
     }

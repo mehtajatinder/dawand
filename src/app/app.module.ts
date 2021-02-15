@@ -15,12 +15,7 @@ import { authInterceptor } from './interceptor/auth.interceptor';
 import { DataServiceService } from './Services/data-service.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LandingPageComponent,
-    // RegisterComponent,
-    // LoginComponent
-  ],
+  declarations: [AppComponent, LandingPageComponent],
   imports: [
     AppRoutingModule,
     HttpClientModule,
@@ -36,7 +31,7 @@ import { DataServiceService } from './Services/data-service.service';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: authInterceptor, multi: true },
-    DataServiceService
+    DataServiceService,
   ],
   bootstrap: [AppComponent],
 })

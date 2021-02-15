@@ -1,146 +1,91 @@
 <div class="wrapper set bg-grey">
   <div class="container">
-    <div class="shadowBordered bg-white ">
-
+    <div class="shadowBordered bg-white">
       <div class="row no-gutters">
         <div class="col-md-4 bg-color-primary">
           <div class="vCenteredSection vhFull">
             <div class="set text-center">
               <h2 class="text-center color-white">Welcome Back!</h2>
-<<<<<<< HEAD
               <div class="color-white mt-3 mb-3 fontL font13">
-                To keep connected with us please<br />
-                login with your personal Info
+                Register with us to be a part of selfless guru's servie<br />
+                Register with your personal Info
               </div>
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm pl-5 pr-5 pt-2 pb-2 btn-rounded-16 mt-3 btn-singIn"
-                routerLink="/login"
+                [routerLink]="'/login'"
               >
                 SIGN IN
               </button>
-=======
-              <div class="color-white mt-3 mb-3 fontL font13">Register with us to be a part of selfless guru's servie<br> Register
-                with your personal Info</div>
-              <button type="button"
-                class="btn btn-outline-primary btn-sm pl-5 pr-5 pt-2 pb-2  btn-rounded-16 mt-3 btn-singIn">SIGN
-                IN</button>
->>>>>>> a1f74ac93935a6fb61aefc03b09aa81385690b91
             </div>
           </div>
         </div>
 
-<<<<<<< HEAD
         <div class="col-md-8">
-          <form (ngSubmit)="register(regForm)" #regForm="ngForm">
+          <form (ngSubmit)="RegisterUser(regForm)" #regForm="ngForm">
             <div class="row" style="padding: 24px 24px">
               <div class="text-center col-md-12 mb-4">
                 <h2 class="color-primary">Create Account</h2>
-=======
-        <div class="col-md-8" [hidden]="isShowThanks">
-
-          <div class="row" style="padding:24px 24px">
-            <div class="text-center col-md-12 mb-4">
-              <h2 class="color-primary">Create Account</h2>
-            </div>
-            <div class="mb-4 col-md-6">
-              <label for="fName" class="form-label">First Name </label>
-              <input type="text" class="form-control" id="fName" [(ngModel)]="userData.firstName" required>
-            </div>
-
-            <div class="mb-4 col-md-6">
-              <label for="lName" class="form-label">Last Name </label>
-              <input type="text" class="form-control" id="lName" [(ngModel)]="userData.lastName">
-            </div>
-
-            <div class="mb-4 col-md-6">
-              <label for="pass" class="form-label">Set Password </label>
-              <input type="password" class="form-control" id="pass" [(ngModel)]="userData.password">
-            </div>
-
-            <div class="mb-4 col-md-6">
-              <label for="cpass" class="form-label">Confirm Password </label>
-              <input type="password" class="form-control" id="cpass" [(ngModel)]="userData.confirmPassword">
-            </div>
-
-            <div class="mb-4 col-md-6">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" [(ngModel)]="userData.email" required>
-            </div>
-
-
-            <div class="mb-4 col-md-6 pt-4">
-              <label for="gender" class="form-label mr-3">Gender : </label>
-
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Gender" value="option1"
-                  [(ngModel)]="userData.gender">
-                <label class="form-check-label" for="inlineRadio1">Male</label>
->>>>>>> a1f74ac93935a6fb61aefc03b09aa81385690b91
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Gender" value="option2"
-                  [(ngModel)]="userData.gender">
-                <label class="form-check-label" for="inlineRadio2">Female</label>
-              </div>
-            </div>
-
-<<<<<<< HEAD
               <div class="mb-4 col-md-6">
-                <!-- <label for="lName" class="form-label">Last Name </label> -->
+                <label for="fName" class="form-label">First Name </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fName"
+                  ngModel
+                  required
+                  name="firstname"
+                />
+              </div>
+
+              <div class="mb-4 col-md-6">
+                <label for="lName" class="form-label">Last Name </label>
                 <input
                   type="text"
                   class="form-control"
                   id="lName"
-                  placeholder="Last Name"
-                  name="lastName"
                   ngModel
+                  name="lastname"
                 />
               </div>
-              <!-- <ng-template ngModelGroup="userData"> -->
+
               <div class="mb-4 col-md-6">
-                <!-- <label for="pass" class="form-label">Set Password </label> -->
+                <label for="pass" class="form-label">Set Password </label>
                 <input
                   type="password"
                   class="form-control"
                   id="pass"
-                  placeholder="Set Password*"
-                  name="password"
                   ngModel
+                  name="password"
                 />
               </div>
 
               <div class="mb-4 col-md-6">
-                <!-- <label for="cpass" class="form-label">Confirm Password </label> -->
+                <label for="cpass" class="form-label">Confirm Password </label>
                 <input
                   type="password"
                   class="form-control"
                   id="cpass"
-                  placeholder="Confirm Password*"
-                  name="confirmPassword"
                   ngModel
+                  name="confirmpassword"
                 />
               </div>
 
               <div class="mb-4 col-md-6">
-                <!-- <label for="email" class="form-label">Email address</label> -->
+                <label for="email" class="form-label">Email address</label>
                 <input
                   type="email"
                   class="form-control"
                   id="email"
-                  placeholder="Email*"
+                  ngModel
                   required
                   name="email"
-                  ngModel
                   email
-                  #email="ngModel"
                 />
-                <span *ngIf="!email.valid && email.touched"
-                  >Please enter correct email.</span
-                >
               </div>
-              <!-- </ng-template> -->
-              <div class="mb-4 col-md-6">
+
+              <div class="mb-4 col-md-6 pt-4">
                 <label for="gender" class="form-label mr-3">Gender : </label>
 
                 <div class="form-check form-check-inline">
@@ -149,8 +94,9 @@
                     type="radio"
                     name="gender"
                     id="Gender"
-                    [value]="'0'"
+                    value="0"
                     [ngModel]="'0'"
+                    required
                   />
                   <label class="form-check-label" for="inlineRadio1"
                     >Male</label
@@ -162,8 +108,8 @@
                     type="radio"
                     name="gender"
                     id="Gender"
-                    [value]="'1'"
-                    [ngModel]="'0'"
+                    value="1"
+                    required
                   />
                   <label class="form-check-label" for="inlineRadio2"
                     >Female</label
@@ -172,52 +118,51 @@
               </div>
 
               <div class="mb-4 col-md-6">
-                <!-- <label for="fhName" class="form-label">Father's/Husband's Name </label> -->
+                <label for="fhName" class="form-label"
+                  >Father's/Husband's Name
+                </label>
                 <input
                   type="text"
                   class="form-control"
                   id="fhName"
                   required
-                  placeholder="Father's/Husband's Name"
-                  name="father'sName"
                   ngModel
+                  name="gaurdianname"
                 />
               </div>
 
               <div class="mb-4 col-md-6">
-                <!-- <label for="fhName" class="form-label">Adhaar Number </label> -->
+                <label for="fhName" class="form-label">Adhaar Number </label>
                 <input
                   type="text"
                   class="form-control"
                   id="apNumber"
-                  placeholder="Adhaar Number"
-                  required
-                  name="adhaarNumber"
                   ngModel
+                  required
+                  name="adhaarnumber"
                 />
               </div>
 
               <div class="mb-4 col-md-6">
-                <!-- <label for="pNumber" class="form-label">Phone Number</label> -->
+                <label for="pNumber" class="form-label">Phone Number</label>
                 <input
                   type="tel"
                   class="form-control"
                   id="pNumber"
-                  placeholder="Phone Number"
-                  name="phoneNumber"
                   ngModel
+                  name="phonenumber"
+                  required
                 />
               </div>
 
               <div class="mb-4 col-md-6">
-                <!-- <label for="aNumber" class="form-label">Alternate Number</label> -->
+                <label for="aNumber" class="form-label">Alternate Number</label>
                 <input
                   type="tel"
                   class="form-control"
                   id="aNumber"
-                  placeholder="Alternate Number"
-                  name="alternateNumber"
                   ngModel
+                  name="alternatenumber"
                 />
               </div>
 
@@ -225,160 +170,6 @@
                 <!-- <label for="desg" class="form-label mr-3">Designation : </label> -->
 
                 <!-- <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="desg" id="desg1" value="desgoption1">
-                                <label class="form-check-label" for="govtEmp">Govt. Emp</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="desg" id="desg2" value="desgoption1">
-                                <label class="form-check-label" for="retdemp">Retired Emp</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="desg" id="desg3" value="desgoption2">
-                                <label class="form-check-label" for="pvtemp">Private Emp</label>
-                            </div> -->
-
-                <select class="form-control" name="designation" [ngModel]="'0'">
-                  <option [value]="'0'">Designation</option>
-                  <option [value]="'1'">Govt. Employee</option>
-                  <option [value]="'2'">Retired Employee</option>
-                  <option [value]="'3'">Private Employee</option>
-                </select>
-              </div>
-
-              <!-- <div class="mb-4 col-md-6" style="display: none"> -->
-              <!-- <label for="deptName" class="form-label">Department Name </label> -->
-              <!-- <input
-                  type="deptName"
-                  class="form-control"
-                  id="fName"
-                  placeholder="Department Name"
-                  required
-                /> -->
-              <!-- </div> -->
-
-              <div class="mb-4 col-md-6">
-                <!-- <label for="deptNamepvt" class="form-label">Department Name </label> -->
-                <select
-                  class="form-select form-control"
-                  aria-label="Default select example"
-                  name="departmentName"
-                  [ngModel]="'0'"
-                >
-                  <option [value]="'0'">Department Name</option>
-                  <option [value]="'1'">Special Police Officers(SPO)</option>
-                  <option [value]="'2'">Software Engineers(IT/CS)</option>
-                  <option [value]="'3'">J&K Bank Employee</option>
-                  <option [value]="'4'">Others</option>
-                </select>
-              </div>
-
-              <div class="mb-4 col-md-6">
-                <label for="gender" class="form-label mr-3">Area : </label>
-
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    id="ubn"
-                    [value]="'0'"
-                    name="area"
-                    [ngModel]="'0'"
-                  />
-                  <label class="form-check-label" for="ubn">Urban</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="area"
-                    id="ubn"
-                    [value]="'1'"
-                    [ngModel]="'0'"
-                  />
-                  <label class="form-check-label" for="ubn">Rural</label>
-                </div>
-              </div>
-
-              <div class="mb-4 col-md-6">
-                <!-- <label for="deptNamepvt" class="form-label">District </label> -->
-                <select
-                  class="form-select form-control"
-                  aria-label="Default select example"
-                  name="district"
-                  [ngModel]="'0'"
-                >
-                  <option [value]="'0'">District</option>
-                  <option [value]="'1'">Anantnag</option>
-                  <option [value]="'2'">Pulwama</option>
-                  <option [value]="'3'">Baramullah</option>
-                  <option [value]="'4'">Srinagar</option>
-                  <option [value]="'5'">Budgham</option>
-                </select>
-              </div>
-
-              <div class="mb-4 col-md-6">
-                <!-- <label for="vName" class="form-label"> Village </label> -->
-                <select class="form-control" name="villageName" [ngModel]="'0'">
-                  <option [value]="'0'">Village Name</option>
-                  <option [value]="'1'">Chithi Singh Pora</option>
-                  <option [value]="'2'">Huttmarha</option>
-                  <option [value]="'3'">Mattan</option>
-                  <option [value]="'4'">Singhpora</option>
-                  <option [value]="'5'">Nowgam</option>
-                  <option [value]="'6'">Nambal</option>
-                </select>
-              </div>
-
-              <div class="mb-4 col-md-6">
-                <!-- <label for="vGname" class="form-label"> Affilated Gurdwara Sahib </label> -->
-                <select
-                  class="form-control"
-                  name="affiliatedGurdwaraSahib"
-                  [ngModel]="'0'"
-                >
-                  <option [value]="'0'">Affiliated Gurdwara Sahib</option>
-                  <option [value]="'1'">Gurdwara Singh Sabha</option>
-                  <option [value]="'2'">Gurudwara Bawli Sahib</option>
-                  <option [value]="'3'">Gurudwara Shokeen Malha</option>
-                </select>
-              </div>
-
-              <div class="mt-2 text-center col-md-12">
-                <button
-                  type="submit"
-                  class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"
-                  [disabled]="!regForm.valid"
-                >
-                  REGISTER
-                </button>
-=======
-            <div class="mb-4 col-md-6">
-              <label for="fhName" class="form-label">Father's/Husband's Name </label>
-              <input type="text" class="form-control" id="fhName" required [(ngModel)]="userData.fathersName">
-            </div>
-
-            <div class="mb-4 col-md-6">
-              <label for="fhName" class="form-label">Adhaar Number </label>
-              <input type="text" class="form-control" id="apNumber" [(ngModel)]="userData.adhaar" required>
-            </div>
-
-            <div class="mb-4 col-md-6">
-              <label for="pNumber" class="form-label">Phone Number</label>
-              <input type="tel" class="form-control" id="pNumber" [(ngModel)]="userData.phoneNumber">
-            </div>
-
-            <div class="mb-4 col-md-6">
-              <label for="aNumber" class="form-label">Alternate Number</label>
-              <input type="tel" class="form-control" id="aNumber" [(ngModel)]="userData.alternateNumber">
-            </div>
-
-
-            <div class="mb-4 col-md-6">
-              <!-- <label for="desg" class="form-label mr-3">Designation : </label> -->
-
-              <!-- <div class="form-check form-check-inline">
                               <input class="form-check-input" type="radio" name="desg" id="desg1" value="desgoption1">
                               <label class="form-check-label" for="govtEmp">Govt. Emp</label>
                           </div>
@@ -392,114 +183,139 @@
                               <input class="form-check-input" type="radio" name="desg" id="desg3" value="desgoption2">
                               <label class="form-check-label" for="pvtemp">Private Emp</label>
                           </div> -->
-              <label for="deptName" class="form-label">Designation </label>
-              <select class="form-control" [(ngModel)]="userData.designation">
-                <!-- <option selected>Designation</option> -->
-                <option value="1">Govt. Employee</option>
-                <option value="2">Retired Employee</option>
-                <option value="3">Private Employee</option>
-
-              </select>
-
-            </div>
-
-            <div class="mb-4 col-md-6 " style="display: none">
-              <label for="deptName" class="form-label">Department Name </label>
-              <input type="deptName" class="form-control" id="fName" [(ngModel)]="userData.firstName" required>
-            </div>
-
-            <div class="mb-4 col-md-6 ">
-              <label for="deptNamepvt" class="form-label">Department Name </label>
-              <select class="form-select form-control" aria-label="Default select example"
-                [(ngModel)]="userData.deptName">
-                <!-- <option selected>Department Name</option> -->
-                <option value="1">Special Police Officers(SPO)</option>
-                <option value="2">Software Engineers(IT/CS)</option>
-                <option value="3">J&K Bank Employee</option>
-                <option value="4">Others</option>
-              </select>
-            </div>
-
-
-
-            <div class="mb-4 col-md-6 pt-4">
-              <label for="gender" class="form-label mr-3">Area : </label>
-
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="area" id="ubn" value="option1"
-                  [(ngModel)]="userData.area">
-                <label class="form-check-label" for="ubn">Urban</label>
+                <label for="deptName" class="form-label">Designation </label>
+                <select
+                  class="form-control"
+                  ngModel
+                  name="designation"
+                  required
+                >
+                  <option value="1">Govt. Employee</option>
+                  <option value="2">Retired Employee</option>
+                  <option value="3">Private Employee</option>
+                </select>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="area" id="Gender" value="option2"
-                  [(ngModel)]="userData.area">
-                <label class="form-check-label" for="ubn">Rural</label>
->>>>>>> a1f74ac93935a6fb61aefc03b09aa81385690b91
+
+              <div class="mb-4 col-md-6">
+                <label for="deptNamepvt" class="form-label"
+                  >Department Name
+                </label>
+                <select
+                  class="form-select form-control"
+                  aria-label="Default select example"
+                  ngModel
+                  required
+                  name="departmentname"
+                >
+                  <option value="1">Special Police Officers(SPO)</option>
+                  <option value="2">Software Engineers(IT/CS)</option>
+                  <option value="3">J&K Bank Employee</option>
+                  <option value="4">Others</option>
+                </select>
+              </div>
+
+              <div class="mb-4 col-md-6 pt-4">
+                <label for="gender" class="form-label mr-3">Area : </label>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="area"
+                    id="ubn"
+                    value="0"
+                    [ngModel]="'0'"
+                    required
+                  />
+                  <label class="form-check-label" for="ubn">Urban</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="area"
+                    id="ubn"
+                    value="1"
+                    required
+                  />
+                  <label class="form-check-label" for="ubn">Rural</label>
+                </div>
+              </div>
+
+              <div class="mb-4 col-md-6">
+                <label for="deptNamepvt" class="form-label">District </label>
+                <select
+                  class="form-select form-control"
+                  aria-label="Default select example"
+                  ngModel
+                  name="district"
+                  required
+                >
+                  <option value="1">Anantnag</option>
+                  <option value="2">Pulwama</option>
+                  <option value="3">Baramullah</option>
+                  <option value="4">Srinagar</option>
+                  <option value="5">Budgham</option>
+                </select>
+              </div>
+
+              <div class="mb-4 col-md-6">
+                <label for="vName" class="form-label"> Village </label>
+                <select class="form-control" ngModel name="village"> required
+                  <option value="1">Chithi Singh Pora</option>
+                  <option value="2">Huttmarha</option>
+                  <option value="3">Mattan</option>
+                  <option value="4">Singhpora</option>
+                  <option value="5">Nowgam</option>
+                  <option value="5">Nambal</option>
+                </select>
+              </div>
+
+              <div class="mb-4 col-md-6">
+                <label for="vGname" class="form-label">
+                  Affilated Gurdwara Sahib
+                </label>
+                <select class="form-control" ngModel name="gurdwara" required>
+                  <option value="1">Gurdwara Singh Sabha</option>
+                  <option value="2">Gurudwara Bawli Sahib</option>
+                  <option value="3">Gurudwara Shokeen Malha</option>
+                </select>
+              </div>
+
+              <div class="mt-2 text-center col-md-12">
+                <button
+                  type="submit"
+                  class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"
+                  [disabled]="!regForm.valid"
+                >
+                  REGISTER
+                </button>
               </div>
             </div>
-
-            <div class="mb-4 col-md-6 ">
-              <label for="deptNamepvt" class="form-label">District </label>
-              <select class="form-select form-control" aria-label="Default select example"
-                [(ngModel)]="userData.district">
-                <!-- <option selected>District</option> -->
-                <option value="1">Anantnag</option>
-                <option value="2">Pulwama</option>
-                <option value="3">Baramullah</option>
-                <option value="4">Srinagar</option>
-                <option value="5">Budgham</option>
-              </select>
-            </div>
-
-            <div class="mb-4 col-md-6 ">
-              <label for="vName" class="form-label"> Village </label>
-              <select class="form-control" [(ngModel)]="userData.villageName">
-                <!-- <option selected> Village Name</option> -->
-                <option value="1">Chithi Singh Pora</option>
-                <option value="2">Huttmarha</option>
-                <option value="3">Mattan</option>
-                <option value="4">Singhpora</option>
-                <option value="5">Nowgam</option>
-                <option value="5">Nambal</option>
-              </select>
-            </div>
-
-            <div class="mb-4 col-md-6 ">
-              <label for="vGname" class="form-label"> Affilated Gurdwara Sahib </label>
-              <select class="form-control" [(ngModel)]="userData.affilatedGurudwara">
-                <!-- <option selected> Affiliated Gurdwara Sahib</option> -->
-                <option value="1">Gurdwara Singh Sabha</option>
-                <option value="2">Gurudwara Bawli Sahib</option>
-                <option value="3">Gurudwara Shokeen Malha</option>
-              </select>
-            </div>
-
-            <div class="mt-2 text-center col-md-12">
-              <button type="button" class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"
-                (click)="RegisterUSer()">REGISTER</button>
-            </div>
-          </div><!-- end of row-->
-
+          </form>
+          <!-- end of row-->
         </div>
 
-
-
-        <div class="col-md-8 text-center" [hidden]="!isShowThanks">
+        <!-- <div class="col-md-8 text-center" [hidden]="!isShowThanks">
           <p>Thanks for registering!!!</p>
           <div class="btn-group">
-            <button class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"  [routerLink]="['/login']">Login</button>
             <button
-              class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2" (click)="isShowThanks = false">Register</button>
+              class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"
+              [routerLink]="['/login']"
+            >
+              Login
+            </button>
+            <button
+              class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"
+              (click)="isShowThanks = false"
+            >
+              Register
+            </button>
           </div>
-        </div>
-
-
+        </div> -->
       </div>
-
-
-
-
-
     </div>
-  </div><!-- end of container-->
-</div><!-- end of wrapper-->
+  </div>
+  <!-- end of container-->
+</div>
+<!-- end of wrapper-->

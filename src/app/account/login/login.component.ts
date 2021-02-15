@@ -23,27 +23,15 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {}
-  login() {
+  LoginUser() {
     this.accountService.LoginInUser(this.loginForm).subscribe(
       (response) => {
         console.log(response);
+        this.router.navigateByUrl('/dashboard')
       },
       (error) => {
         console.log(error);
       }
     );
   }
-
-  // loginUser() {
-  //   console.log(this.userLogin);
-  //   this.dataservice.LoginUser(this.userLogin).subscribe((m) => {
-  //     if (m.isValid) {
-  //       console.log(m.message);
-  //       console.log(m.result);
-  //       this.router.navigate(['/user-dashboard']);
-  //       this.userLogin.loginId = '';
-  //       this.userLogin.loginPassword = '';
-  //     }
-  //   });
-  // }
 }
