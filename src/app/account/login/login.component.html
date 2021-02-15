@@ -1,4 +1,4 @@
-<form (ngSubmit)="login()">
+<form (ngSubmit)="login()" #loginForm="ngForm">
   <div class="row">
     <div class="mb-4 col-md-12">
       <input
@@ -26,6 +26,7 @@
       <button
         type="submit"
         class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"
+        [disabled]="!loginForm.valid"
       >
         Login
       </button>

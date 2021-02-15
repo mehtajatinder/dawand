@@ -6,4 +6,4 @@ import { UserDasboardComponent } from './user-dasboard.component';
   imports: [],
   exports: [],
 })
-class UserDashboardModule {}
+export class UserDashboardModule {}

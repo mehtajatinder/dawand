@@ -13,6 +13,7 @@
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm pl-5 pr-5 pt-2 pb-2 btn-rounded-16 mt-3 btn-singIn"
+                routerLink="/login"
               >
                 SIGN IN
               </button>
@@ -21,7 +22,7 @@
         </div>
 
         <div class="col-md-8">
-          <form (ngSubmit)="register(regForm)" #regForm="ngForm"> 
+          <form (ngSubmit)="register(regForm)" #regForm="ngForm">
             <div class="row" style="padding: 24px 24px">
               <div class="text-center col-md-12 mb-4">
                 <h2 class="color-primary">Create Account</h2>
@@ -50,7 +51,7 @@
                   ngModel
                 />
               </div>
-
+              <!-- <ng-template ngModelGroup="userData"> -->
               <div class="mb-4 col-md-6">
                 <!-- <label for="pass" class="form-label">Set Password </label> -->
                 <input
@@ -70,6 +71,8 @@
                   class="form-control"
                   id="cpass"
                   placeholder="Confirm Password*"
+                  name="confirmPassword"
+                  ngModel
                 />
               </div>
 
@@ -83,9 +86,14 @@
                   required
                   name="email"
                   ngModel
+                  email
+                  #email="ngModel"
                 />
+                <span *ngIf="!email.valid && email.touched"
+                  >Please enter correct email.</span
+                >
               </div>
-
+              <!-- </ng-template> -->
               <div class="mb-4 col-md-6">
                 <label for="gender" class="form-label mr-3">Gender : </label>
 
@@ -93,20 +101,23 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="inlineRadioOptions"
+                    name="gender"
                     id="Gender"
-                    value="option1"
+                    [value]="'0'"
+                    [ngModel]="'0'"
                   />
                   <label class="form-check-label" for="inlineRadio1"
-                    >Male</label>
+                    >Male</label
+                  >
                 </div>
                 <div class="form-check form-check-inline">
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="inlineRadioOptions"
+                    name="gender"
                     id="Gender"
-                    value="option2"
+                    [value]="'1'"
+                    [ngModel]="'0'"
                   />
                   <label class="form-check-label" for="inlineRadio2"
                     >Female</label
@@ -122,6 +133,8 @@
                   id="fhName"
                   required
                   placeholder="Father's/Husband's Name"
+                  name="father'sName"
+                  ngModel
                 />
               </div>
 
@@ -133,6 +146,8 @@
                   id="apNumber"
                   placeholder="Adhaar Number"
                   required
+                  name="adhaarNumber"
+                  ngModel
                 />
               </div>
 
@@ -143,6 +158,8 @@
                   class="form-control"
                   id="pNumber"
                   placeholder="Phone Number"
+                  name="phoneNumber"
+                  ngModel
                 />
               </div>
 
@@ -153,6 +170,8 @@
                   class="form-control"
                   id="aNumber"
                   placeholder="Alternate Number"
+                  name="alternateNumber"
+                  ngModel
                 />
               </div>
 
@@ -174,36 +193,38 @@
                                 <label class="form-check-label" for="pvtemp">Private Emp</label>
                             </div> -->
 
-                <select class="form-control">
-                  <option selected>Designation</option>
-                  <option value="1">Govt. Employee</option>
-                  <option value="2">Retired Employee</option>
-                  <option value="3">Private Employee</option>
+                <select class="form-control" name="designation" [ngModel]="'0'">
+                  <option [value]="'0'">Designation</option>
+                  <option [value]="'1'">Govt. Employee</option>
+                  <option [value]="'2'">Retired Employee</option>
+                  <option [value]="'3'">Private Employee</option>
                 </select>
               </div>
 
-              <div class="mb-4 col-md-6" style="display: none">
-                <!-- <label for="deptName" class="form-label">Department Name </label> -->
-                <input
+              <!-- <div class="mb-4 col-md-6" style="display: none"> -->
+              <!-- <label for="deptName" class="form-label">Department Name </label> -->
+              <!-- <input
                   type="deptName"
                   class="form-control"
                   id="fName"
                   placeholder="Department Name"
                   required
-                />
-              </div>
+                /> -->
+              <!-- </div> -->
 
               <div class="mb-4 col-md-6">
                 <!-- <label for="deptNamepvt" class="form-label">Department Name </label> -->
                 <select
                   class="form-select form-control"
                   aria-label="Default select example"
+                  name="departmentName"
+                  [ngModel]="'0'"
                 >
-                  <option selected>Department Name</option>
-                  <option value="1">Special Police Officers(SPO)</option>
-                  <option value="2">Software Engineers(IT/CS)</option>
-                  <option value="3">J&K Bank Employee</option>
-                  <option value="4">Others</option>
+                  <option [value]="'0'">Department Name</option>
+                  <option [value]="'1'">Special Police Officers(SPO)</option>
+                  <option [value]="'2'">Software Engineers(IT/CS)</option>
+                  <option [value]="'3'">J&K Bank Employee</option>
+                  <option [value]="'4'">Others</option>
                 </select>
               </div>
 
@@ -214,9 +235,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="area"
                     id="ubn"
-                    value="option1"
+                    [value]="'0'"
+                    name="area"
+                    [ngModel]="'0'"
                   />
                   <label class="form-check-label" for="ubn">Urban</label>
                 </div>
@@ -225,8 +247,9 @@
                     class="form-check-input"
                     type="radio"
                     name="area"
-                    id="Gender"
-                    value="option2"
+                    id="ubn"
+                    [value]="'1'"
+                    [ngModel]="'0'"
                   />
                   <label class="form-check-label" for="ubn">Rural</label>
                 </div>
@@ -237,36 +260,42 @@
                 <select
                   class="form-select form-control"
                   aria-label="Default select example"
+                  name="district"
+                  [ngModel]="'0'"
                 >
-                  <option selected>District</option>
-                  <option value="1">Anantnag</option>
-                  <option value="2">Pulwama</option>
-                  <option value="3">Baramullah</option>
-                  <option value="4">Srinagar</option>
-                  <option value="5">Budgham</option>
+                  <option [value]="'0'">District</option>
+                  <option [value]="'1'">Anantnag</option>
+                  <option [value]="'2'">Pulwama</option>
+                  <option [value]="'3'">Baramullah</option>
+                  <option [value]="'4'">Srinagar</option>
+                  <option [value]="'5'">Budgham</option>
                 </select>
               </div>
 
               <div class="mb-4 col-md-6">
                 <!-- <label for="vName" class="form-label"> Village </label> -->
-                <select class="form-control">
-                  <option selected>Village Name</option>
-                  <option value="1">Chithi Singh Pora</option>
-                  <option value="2">Huttmarha</option>
-                  <option value="3">Mattan</option>
-                  <option value="4">Singhpora</option>
-                  <option value="5">Nowgam</option>
-                  <option value="5">Nambal</option>
+                <select class="form-control" name="villageName" [ngModel]="'0'">
+                  <option [value]="'0'">Village Name</option>
+                  <option [value]="'1'">Chithi Singh Pora</option>
+                  <option [value]="'2'">Huttmarha</option>
+                  <option [value]="'3'">Mattan</option>
+                  <option [value]="'4'">Singhpora</option>
+                  <option [value]="'5'">Nowgam</option>
+                  <option [value]="'6'">Nambal</option>
                 </select>
               </div>
 
               <div class="mb-4 col-md-6">
                 <!-- <label for="vGname" class="form-label"> Affilated Gurdwara Sahib </label> -->
-                <select class="form-control">
-                  <option selected>Affiliated Gurdwara Sahib</option>
-                  <option value="1">Gurdwara Singh Sabha</option>
-                  <option value="2">Gurudwara Bawli Sahib</option>
-                  <option value="3">Gurudwara Shokeen Malha</option>
+                <select
+                  class="form-control"
+                  name="affiliatedGurdwaraSahib"
+                  [ngModel]="'0'"
+                >
+                  <option [value]="'0'">Affiliated Gurdwara Sahib</option>
+                  <option [value]="'1'">Gurdwara Singh Sabha</option>
+                  <option [value]="'2'">Gurudwara Bawli Sahib</option>
+                  <option [value]="'3'">Gurudwara Shokeen Malha</option>
                 </select>
               </div>
 
@@ -274,6 +303,7 @@
                 <button
                   type="submit"
                   class="btn btn-custom-primary btn-primary btn-rounded-16 btn-sm pb-2 pl-5 pr-5 pt-2"
+                  [disabled]="!regForm.valid"
                 >
                   REGISTER
                 </button>

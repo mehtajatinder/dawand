@@ -17,7 +17,7 @@ const routes = [
       import('../account/login/login.module').then((m) => {
         return m.LoginModule;
       }),
-  },
+  }
 ];
 
 @NgModule({
