@@ -17,6 +17,8 @@ export class RegisterComponent implements OnInit {
     private dataService: DataServiceService
   ) {}
 
+  public userData: any;
+  public isShowThanks!: boolean;
   ngOnInit(): void {}
 
   register(regForm: NgForm) {
@@ -32,4 +34,23 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
+
+  // register(regForm: NgForm) {
+  //   console.log(regForm);
+  //   this.httpClient
+  //     .post('http://localhost:8080/register', regForm.value)
+  //     .subscribe((data) => {
+  //       console.log(data);
+  //     });
+  // }
+
+  // RegisterUSer(){
+  //   this.dataService.RegisterUser(this.userData).subscribe(m => {
+  //     if(m.isvalid){
+  //       this.isShowThanks = true
+  //       this.userData = ''
+  //     }
+  //   })
+
+  // }
 }

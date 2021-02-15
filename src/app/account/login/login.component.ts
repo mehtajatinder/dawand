@@ -34,16 +34,16 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  loginUser() {
-    console.log(this.userLogin);
-    this.dataservice.LoginUser(this.userLogin).subscribe((m) => {
-      if (m.isValid) {
-        console.log(m.message);
-        console.log(m.result);
-        this.router.navigate(['/user-dashboard']);
-        this.userLogin.loginId = '';
-        this.userLogin.loginPassword = '';
-      }
-    });
-  }
+  // loginUser() {
+  //   console.log(this.userLogin);
+  //   this.dataservice.LoginUser(this.userLogin).subscribe((m) => {
+  //     if (m.isValid) {
+  //       console.log(m.message);
+  //       console.log(m.result);
+  //       this.router.navigate(['/user-dashboard']);
+  //       this.userLogin.loginId = '';
+  //       this.userLogin.loginPassword = '';
+  //     }
+  //   });
+  // }
 }

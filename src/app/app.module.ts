@@ -18,6 +18,8 @@ import { DataServiceService } from './Services/data-service.service';
   declarations: [
     AppComponent,
     LandingPageComponent,
+    // RegisterComponent,
+    // LoginComponent
   ],
   imports: [
     AppRoutingModule,

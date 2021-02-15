@@ -5,6 +5,9 @@ html,body{
 .font13{
     font-size: 13px;
 }
+.font16{
+    font-size: 16px
+}
 .fontB{
     font-weight: 500;
 }
@@ -35,6 +38,62 @@ html,body{
 .vhFull{
     height: 100%;
 }
+
+/*border set*/
+.borderAll{
+    border: 1px solid;
+}
+.borderT{
+    border-top: 1px solid;
+}
+.borderB{
+    border-bottom: 1px solid;
+}
+.borderL{
+    border-left: 1px solid;
+}
+.borderR{
+    border-right: 1px solid;
+}
+.borderBasic{
+    border-color:#e2e2e2
+}
+.borderBlack{
+    border-color: #000
+}
+.borderTheme{
+border-color: #3aaf9f
+}
+/*end*/
+
+.no-margin{
+    margin:0
+}
+
+/*padding set*/
+.no-padding{
+    padding: 0px
+}
+.no-padding-LR{
+    padding-left: 0px;
+    padding-right: 0px
+}
+.no-padding-TB{
+    padding-top: 0px;
+    padding-bottom: 0px
+}
+.no-padding-T{
+    padding-top: 0px;
+}
+.no-padding-B{
+    padding-bottom: 0px
+}
+.no-padding-L{
+    padding-left: 0px;
+}
+.no-padding-R{
+    padding-right: 0px
+}
 .padding-l{
     padding: 24px;
 }
@@ -44,10 +103,67 @@ html,body{
 .padding-l-LR{
     padding: 0px 24px;
 }
-.padding-L{
-    padding: 24px;
+.padding-l-T{
+    padding-top: 24px;
+}
+.padding-l-B{
+    padding-bottom: 24px;
+}
+.padding-l-L{
+    padding-left: 24px;
+}
+.padding-l-R{
+    padding-right: 24px;
 }
 
+
+.padding-m{
+    padding: 16px;
+}
+.padding-m-TB{
+    padding: 16px 0px;
+}
+.padding-m-LR{
+    padding: 0px 16px;
+}
+.padding-m-T{
+    padding-top: 16px;
+}
+.padding-m-B{
+    padding-bottom: 16px;
+}
+.padding-m-L{
+    padding-left: 16px;
+}
+.padding-m-R{
+    padding-right: 16px;
+}
+
+
+.padding-s{
+    padding: 8px;
+}
+.padding-s-TB{
+    padding: 8px 0px;
+}
+.padding-s-LR{
+    padding: 0px 8px;
+}
+.padding-s-T{
+    padding-top: 8px;
+}
+.padding-s-B{
+    padding-bottom: 8px;
+}
+.padding-s-L{
+    padding-left: 8px;
+}
+.padding-s-R{
+    padding-right: 8px;
+}
+
+
+/*end*/
 .form-control{
     background-color: #f4f8f7;
     border: none;
@@ -58,6 +174,9 @@ html,body{
 }
 .color-white{
     color: #fff
+}
+.color-fade{
+    color: #aaa
 }
 .bg-color-primary,
 .btn-custom-primary{
@@ -79,4 +198,97 @@ html,body{
     background-color: #fff;
     border-color: #fff;
     color: #3aaf9f
+}
+label.form-label{
+    margin-bottom: .2rem;
+}
+.borderHeading{
+border-bottom: 2px solid;
+padding-bottom: 2px;
+}
+.sideNavigation{
+    background: #f6f6f6;
+    height: calc(100vh - 56px);
+}
+
+.sideNavigation ul li{
+    padding: 14px 16px;
+    color: #999
+}
+.sideNavigation ul li:before{
+width: 20px;
+height: 20px;
+display: inline-block;
+margin: 0 auto;
+content: "";
+background: url(/assets/icons-sprite.png) center -980px;
+vertical-align: middle;
+margin-right: 5px;
+}
+.sideNavigation ul li.dashboard:before {
+    background-position: center -1022px;
+}
+.sideNavigation ul li.portfolio:before {
+    background-position: center -1502px;
+}
+.sideNavigation ul li.transactions:before {
+    background-position: center -1062px;
+}
+.sideNavigation ul li.settings:before {
+    background-position: center -980px;
+}
+.sideNavigation ul li.download-center:before {
+    background-position: center -2440px;
+}
+.sideNavigation ul li:hover{
+background-color: #eef1f3;
+color: #555;
+cursor:pointer;
+}
+.userMainHeading{
+    font-size: 20px;
+    letter-spacing: 0.7px
+}
+.das-tab{
+
+}
+
+.das-tab .nav-tabs .nav-link{
+    color: #1e1e1e;
+    padding: 1rem 3rem;
+}
+.das-tab .nav-tabs .nav-link.active{
+    font-weight: 500;
+    background-color: #f2f2f2;
+}
+
+.das-tab .tabBody{
+    border: 1px solid #dee2e6 ;
+    margin-top: -2px;
+    padding: 24px;
+    background-color: #f2f2f2;
+    font-size: 13px
+    /* position: relative; */
+}
+.das-tab .tabBody .row{
+    padding: 8px 16px;
+    background-color: #fff;
+    margin-bottom: 10px
+}
+.table.trnxTable td, .table.trnxTable th{
+    padding: 8px;
+    border-color: #eee;
+    color: #555;
+    font-size: 13px;
+}
+.table.trnxTable th{
+    border-top: none;
+    border-bottom: 1px solid #eee;
+    color: #777
+}
+.table.trnxTable .badge{
+font-weight: normal
+}
+.midDataSection{
+    box-shadow: -1px 0 5px rgba(0,0,0,.05);
 }
