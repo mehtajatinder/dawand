@@ -17,7 +17,14 @@ const routes = [
       import('../account/login/login.module').then((m) => {
         return m.LoginModule;
       }),
-  }
+  },
+  {
+    path: 'user-dashboard',
+    loadChildren: () =>
+      import('../account/user-dashboard/user-dashboard.module').then((m) => {
+        return m.UserDashboardModule;
+      }),
+  },
 ];
 
 @NgModule({
