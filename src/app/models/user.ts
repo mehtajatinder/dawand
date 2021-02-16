@@ -1,7 +1,7 @@
-export class UserData {
+export class User {
   constructor(
-    private token: string,
-    public userID: string,
+    private _token: string,
+    public userID: number,
     public firstName?: string,
     public lastName?: string,
     public email?: string,
@@ -18,4 +18,12 @@ export class UserData {
     public villageName?: string,
     public affilatedGurudwara?: string
   ) {}
+
+  get token() {
+    if (!this._token) {
+      return null;
+    } else {
+      return this._token;
+    }
+  }
 }

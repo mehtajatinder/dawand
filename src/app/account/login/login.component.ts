@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
   LoginUser() {
     this.accountService.LoginInUser(this.loginForm).subscribe(
       (response) => {
-        console.log(response);
         this.router.navigateByUrl('/dashboard')
       },
       (error) => {
