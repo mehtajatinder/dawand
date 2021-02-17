@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserDasboardComponent } from './account/user-dashboard/user-dasboard.component';
+import { authGaurd } from './authGaurd/authGaurd.service';
 import { LandingPageComponent } from './landing-page/landingPage.component';
 
 const routes: Routes = [
@@ -21,12 +22,21 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canLoad: [authGaurd],
     loadChildren: () =>
       import('./account/user-dashboard/user-dashboard.module').then(
         (module) => {
           return module.UserDashboardModule;
         }
       ),
+  },
+  {
+    path: 'home',
+    component: LandingPageComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/',
   },
 ];
 

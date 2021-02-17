@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <h2 class="navbar-brand" routerLink="">Daswand</h2>
+    <h2 class="navbar-brand" routerLink="/">Daswand</h2>
     <button
       class="navbar-toggler"
       type="button"
@@ -17,10 +17,19 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            routerLink=""
+            routerLink="/home"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
+            *ngIf="!isAuthenticated"
             >Home</a
+          >
+          <a
+            class="nav-link"
+            routerLink="/dashboard"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            *ngIf="isAuthenticated"
+            >Dashboard</a
           >
         </li>
 
@@ -45,6 +54,7 @@
             class="nav-link"
             routerLink="/register"
             [routerLinkActive]="['active']"
+            (click)="LogoutUser()"
             >Log out</a
           >
         </li>

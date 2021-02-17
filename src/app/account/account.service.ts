@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { User } from '../models/user';
 import { tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 export interface AccountResponseData {
   userId: number;
@@ -12,8 +13,8 @@ export interface AccountResponseData {
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
-  user = new Subject<User>();
-  constructor(private httpClient: HttpClient) {}
+  user = new BehaviorSubject<any>(null);
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
   RegisterUser(regForm: NgForm) {
     return this.httpClient.post<AccountResponseData>(
@@ -30,11 +31,35 @@ export class AccountService {
         })
       );
   }
+  LogoutUser() {
+    this.user.next(null);
+    this.router.navigate(['/login']);
+    localStorage.removeItem('userData');
+  }
+  AutoLogin() {
+    const userData: {
+      userID: number;
+      _token: string;
+    } = JSON.parse(localStorage.getItem('userData')!);
+
+    if (!userData) {
+      return;
+    }
+    const loadedUser = new User(userData._token, userData.userID);
+
+    if (loadedUser.token) {
+      return this.user.next(loadedUser);
+    }
+  }
+  AutoLogout() {
+    //setTimeout(() => {}, 0);
+  }
   private handleAuthentication(token: string, userId: number) {
     if (token == undefined) {
       this.user.next(undefined);
     }
     const user = new User(token, userId);
     this.user.next(user);
+    localStorage.setItem('userData', JSON.stringify(user));
   }
 }
