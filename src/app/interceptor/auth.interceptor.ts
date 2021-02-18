@@ -3,13 +3,26 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
+import { exhaustMap, take } from 'rxjs/operators';
+import { AccountService } from '../account/account.service';
+@Injectable()
 export class authInterceptor implements HttpInterceptor {
+  constructor(private accountService: AccountService) {}
+
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    const modReq = req.clone({
-      headers: req.headers.append('auth', 'authorised'),
-    });
-    console.log(modReq)
-    return next.handle(modReq);
+    return this.accountService.user.pipe(
+      take(1),
+      exhaustMap((user) => {
+        if (!user) {
+          return next.handle(req);
+        }
+        const modReq = req.clone({
+          headers: req.headers.append('token', user.token!),
+        });
+
+        return next.handle(modReq);
+      })
+    );
   }
 }
