@@ -1,62 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <h2 class="navbar-brand" routerLink="/">Daswand</h2>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/home"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            *ngIf="!isAuthenticated"
-            >Home</a
-          >
-          <a
-            class="nav-link"
-            routerLink="/dashboard"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            *ngIf="isAuthenticated"
-            >Dashboard</a
-          >
+          <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            *ngIf="!isAuthenticated">Home</a>
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }" *ngIf="isAuthenticated">Dashboard</a>
         </li>
 
         <li class="nav-item" *ngIf="!isAuthenticated">
-          <a
-            class="nav-link"
-            routerLink="/login"
-            [routerLinkActive]="['active']"
-            >Login</a
-          >
+          <a class="nav-link" routerLink="/login" [routerLinkActive]="['active']">Login</a>
         </li>
         <li class="nav-item" *ngIf="!isAuthenticated">
-          <a
-            class="nav-link"
-            routerLink="/register"
-            [routerLinkActive]="['active']"
-            >Register</a
-          >
+          <a class="nav-link" routerLink="/register" [routerLinkActive]="['active']">Register</a>
         </li>
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a
-            class="nav-link"
-            routerLink="/register"
-            [routerLinkActive]="['active']"
-            (click)="LogoutUser()"
-            >Log out</a
-          >
+          <a class="nav-link" routerLink="/register" [routerLinkActive]="['active']" (click)="LogoutUser()">Log out</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" routerLink="/user-dashboard" [routerLinkActive]="['active']">dashboard</a>

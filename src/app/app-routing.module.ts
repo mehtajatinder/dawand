@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserDasboardComponent } from './account/user-dashboard/user-dasboard.component';
+// import { UserDasboardComponent } from './account/user-dashboard/user-dasboard.component';
 import { authGaurd } from './authGaurd/authGaurd.service';
 import { LandingPageComponent } from './landing-page/landingPage.component';
 
@@ -22,11 +22,11 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    canLoad: [authGaurd],
+     canLoad: [authGaurd],
     loadChildren: () =>
       import('./account/user-dashboard/user-dashboard.module').then(
         (module) => {
-          return module.UserDashboardModule;
+          return  module.UserDashboardModule;
         }
       ),
   },
@@ -41,7 +41,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{ enableTracing: false })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -1,4 +1,4 @@
-<div class="wrapper set bg-grey">
+<div class="wrapper set bg-grey"  style="height: calc(100vh - 58px); display: flex; align-items: center">
   <div class="container">
     <div class="shadowBordered bg-white">
       <div class="row no-gutters">
@@ -26,31 +26,31 @@
                 <h2 class="color-primary">Create Account</h2>
               </div>
               <div class="mb-4 col-md-6">
-                <label for="fName" class="form-label">First Name </label>
-                <input type="text" class="form-control" id="fName" ngModel required name="firstname" />
+                <!-- <label for="fName" class="form-label">First Name </label> -->
+                <input type="text" class="form-control" id="fName" ngModel required name="firstname" placeholder="First Name" />
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="lName" class="form-label">Last Name </label>
-                <input type="text" class="form-control" id="lName" ngModel name="lastname" />
+                <!-- <label for="lName" class="form-label">Last Name </label> -->
+                <input type="text" class="form-control" id="lName" ngModel name="lastname" placeholder="Last Name" />
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="pass" class="form-label">Set Password </label>
-                <input type="password" class="form-control" id="pass" ngModel name="password" />
+                <!-- <label for="pass" class="form-label">Set Password </label> -->
+                <input type="password" class="form-control" id="pass" ngModel name="password" placeholder="Set Password" />
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="cpass" class="form-label">Confirm Password </label>
-                <input type="password" class="form-control" id="cpass" ngModel name="confirmpassword" />
+                <!-- <label for="cpass" class="form-label">Confirm Password </label> -->
+                <input type="password" class="form-control" id="cpass" ngModel name="confirmpassword" placeholder="Confirm Password" />
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" ngModel required name="email" email />
+                <!-- <label for="email" class="form-label">Email address</label> -->
+                <input type="email" class="form-control" id="email" ngModel required name="email" email placeholder="Email" />
               </div>
 
-              <div class="mb-4 col-md-6 pt-4">
+              <div class="mb-4 col-md-6">
                 <label for="gender" class="form-label mr-3">Gender : </label>
 
                 <div class="form-check form-check-inline">
@@ -65,24 +65,24 @@
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="fhName" class="form-label">Father's/Husband's Name
-                </label>
-                <input type="text" class="form-control" id="fhName" required ngModel name="gaurdianname" />
+                <!-- <label for="fhName" class="form-label">Father's/Husband's Name
+                </label> -->
+                <input type="text" class="form-control" id="fhName" required ngModel name="gaurdianname" placeholder="Father's/ Husband's" />
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="fhName" class="form-label">Adhaar Number </label>
-                <input type="text" class="form-control" id="apNumber" ngModel required name="adhaarnumber" />
+                <!-- <label for="fhName" class="form-label">Adhaar Number </label> -->
+                <input type="text" class="form-control" id="apNumber" ngModel required name="adhaarnumber" placeholder="Adhaar Number" />
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="pNumber" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="pNumber" ngModel name="phonenumber" required />
+                <!-- <label for="pNumber" class="form-label">Phone Number</label> -->
+                <input type="tel" class="form-control" id="pNumber" ngModel name="phonenumber" required placeholder="Phone Number" />
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="aNumber" class="form-label">Alternate Number</label>
-                <input type="tel" class="form-control" id="aNumber" ngModel name="alternatenumber" />
+                <!-- <label for="aNumber" class="form-label">Alternate Number</label> -->
+                <input type="tel" class="form-control" id="aNumber" ngModel name="alternatenumber" placeholder="Alternate Number" />
               </div>
 
               <div class="mb-4 col-md-6">
@@ -102,8 +102,9 @@
                               <input class="form-check-input" type="radio" name="desg" id="desg3" value="desgoption2">
                               <label class="form-check-label" for="pvtemp">Private Emp</label>
                           </div> -->
-                <label for="deptName" class="form-label">Designation </label>
-                <select class="form-control" ngModel name="designation" required>
+                <!-- <label for="deptName" class="form-label">Designation </label> -->
+                <select class="form-control" ngModel="Designation" name="designation" required>
+                  <option selected>Designation</option>
                   <option value="1">Govt. Employee</option>
                   <option value="2">Retired Employee</option>
                   <option value="3">Private Employee</option>
@@ -111,10 +112,11 @@
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="deptNamepvt" class="form-label">Department Name
-                </label>
-                <select class="form-select form-control" aria-label="Default select example" ngModel required
+                <!-- <label for="deptNamepvt" class="form-label">Department Name
+                </label> -->
+                <select class="form-select form-control" aria-label="Default select example" ngModel="Department Name" required
                   name="departmentname">
+                  <option selected>Department Name</option>
                   <option value="1">Special Police Officers(SPO)</option>
                   <option value="2">Software Engineers(IT/CS)</option>
                   <option value="3">J&K Bank Employee</option>
@@ -122,7 +124,7 @@
                 </select>
               </div>
 
-              <div class="mb-4 col-md-6 pt-4">
+              <div class="mb-4 col-md-6">
                 <label for="gender" class="form-label mr-3">Area : </label>
 
                 <div class="form-check form-check-inline">
@@ -137,9 +139,10 @@
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="deptNamepvt" class="form-label">District </label>
-                <select class="form-select form-control" aria-label="Default select example" ngModel name="district"
+                <!-- <label for="deptNamepvt" class="form-label">District </label> -->
+                <select class="form-select form-control" aria-label="Default select example" ngModel="District" name="District"
                   required>
+                  <option selected>District</option>
                   <option value="1">Anantnag</option>
                   <option value="2">Pulwama</option>
                   <option value="3">Baramullah</option>
@@ -149,8 +152,10 @@
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="vName" class="form-label"> Village </label>
-                <select class="form-control" ngModel name="village"> required
+                <!-- <label for="vName" class="form-label"> Village </label> -->
+
+                <select class="form-control" ngModel="Village" name="village" required> 
+                  <option selected>Village</option>
                   <option value="1">Chithi Singh Pora</option>
                   <option value="2">Huttmarha</option>
                   <option value="3">Mattan</option>
@@ -161,10 +166,11 @@
               </div>
 
               <div class="mb-4 col-md-6">
-                <label for="vGname" class="form-label">
+                <!-- <label for="vGname" class="form-label">
                   Affilated Gurdwara Sahib
-                </label>
-                <select class="form-control" ngModel name="gurdwara" required>
+                </label> -->
+                <select class="form-control" ngModel="Affilated Gurdwara Sahib" name="gurdwara" required>
+                  <option selected>Affilated Gurdwara Sahib</option>
                   <option value="1">Gurdwara Singh Sabha</option>
                   <option value="2">Gurudwara Bawli Sahib</option>
                   <option value="3">Gurudwara Shokeen Malha</option>

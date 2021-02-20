@@ -2,14 +2,14 @@
     <div class="row no-gutters">
         <div class="col-md-2 sideNavigation">
             <ul class="">
-                <li class="dashboard">Dashboard</li>
-                <li class="portfolio">Portfolio</li>
-                <li class="transactions">Transactions</li>
-                <li class="settings">Settings</li>
+                <li class="dashboard" routerLink="/dashboard" [routerLinkActive]="['active']">Dashboard</li>
+                <li class="portfolio" routerLink="./portfolio" [routerLinkActive]="['active']">Portfolio</li>
+                <li class="transactions" routerLink="./transactions" [routerLinkActive]="['active']">Transactions</li>
+                <li class="settings" routerLink="./settings" [routerLinkActive]="['active']">Settings</li>
                 <li class="download-center">Download Center</li>
             </ul>
         </div>
-        <div class="col-md-10 no-gutters ">
+        <div class="col-md-10 no-gutters " style="display: none;">
 
             <div class="padding-m borderB borderBasic">
                 <h5 class="color-primary no-margin userMainHeading">DASHBOARD</h5>
@@ -141,5 +141,8 @@
 
 
         </div>
+
+        <router-outlet></router-outlet>
+
     </div>
 </div>
