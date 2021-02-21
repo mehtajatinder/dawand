@@ -1,15 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
+    this.httpClient.get('http://localhost:8080/dashboard').subscribe(
+      (res) => {
+        console.log(res)
+      },
+      (err) => {
+        console.log(err)
+      }
+    );
   }
-
 }

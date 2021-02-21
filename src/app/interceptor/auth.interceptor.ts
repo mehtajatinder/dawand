@@ -4,7 +4,8 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { exhaustMap, take } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { exhaustMap, catchError, take } from 'rxjs/operators';
 import { AccountService } from '../account/account.service';
 @Injectable()
 export class authInterceptor implements HttpInterceptor {
@@ -21,7 +22,16 @@ export class authInterceptor implements HttpInterceptor {
           headers: req.headers.append('token', user.token!),
         });
 
-        return next.handle(modReq);
+        return next.handle(modReq).pipe(
+          catchError((err) => {
+            if (err) {
+              if (err.status == '401') {
+                this.accountService.LogoutUser();
+              }
+            }
+            return throwError(err);
+          })
+        );
       })
     );
   }
