@@ -8,6 +8,9 @@ html,body{
 .font16{
     font-size: 16px
 }
+.font20{
+    font-size: 20px
+}
 .fontB{
     font-weight: 500;
 }
@@ -38,7 +41,9 @@ html,body{
 .vhFull{
     height: 100%;
 }
-
+.color777{
+color: #777;
+}
 /*border set*/
 .borderAll{
     border: 1px solid;
@@ -141,7 +146,7 @@ border-color: #3aaf9f
 
 
 .padding-s{
-    padding: 8px;
+    padding: 8px !important;
 }
 .padding-s-TB{
     padding: 8px 0px;
@@ -183,6 +188,9 @@ border-color: #3aaf9f
     background-color: #3aaf9f;
     border-color: #3aaf9f;
 }
+.bg-color-secondary{
+    background-color: #f2f2f2;
+}
 .btn-custom-primary:hover{
     background-color: #268b7e;
     border-color: #268b7e;
@@ -209,13 +217,16 @@ padding-bottom: 2px;
 .sideNavigation{
     background: #f6f6f6;
     height: calc(100vh - 56px);
+    position: absolute;
+    left: 0;
+    width: 250px;
 }
 
 .sideNavigation ul li{
     padding: 14px 16px;
     color: #999
 }
-.sideNavigation ul li:before{
+.sideNavigation ul li:before,.profileLinks ul li + li:before{
 width: 20px;
 height: 20px;
 display: inline-block;
@@ -291,4 +302,53 @@ font-weight: normal
 }
 .midDataSection{
     box-shadow: -1px 0 5px rgba(0,0,0,.05);
+}
+.profileWrapper{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.profilerBox{
+    color: #fff;
+    background-color: #3aaf9f;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 250px;
+    text-align: center;
+}
+.profileImgWrapper{
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid #efefef;
+}
+img.full{
+    width: 100%;
+    height: 100%;
+}
+.profileLinks ul li{
+    padding: 10px 20px;
+    border-top: 1px solid;
+    border-color: #e2e2e2;
+    color: #777;
+}
+.profileLinks ul li.profileEdit:before {
+    background-position: center -1352px;
+}
+.profileLinks ul li.profilePass:before {
+    background-position: center -258px;
+}
+.profileLinks ul li.profileImg:before {
+    background-position: center -1000px;
+}
+
+.profileLinks ul li:hover{
+    cursor: pointer;
+    background-color:#eef1f3
+}
+.profileInfoBox{
+    border: 1px solid #e1e1e1;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
