@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ModalModule } from 'ngx-bootstrap/modal';
+// import { TabsModule } from 'ngx-bootstrap/tabs';
+// import { ModalModule } from 'ngx-bootstrap/modal';
 import { LandingPageComponent } from './landing-page/landingPage.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -25,8 +25,8 @@ import { DataServiceService } from './Services/data-service.service';
     HttpClientModule,
     FormsModule,
     CarouselModule.forRoot(),
-    ModalModule.forRoot(),
-    TabsModule.forRoot(),
+    // ModalModule.forRoot(),
+    // TabsModule.forRoot(),
     routerModule,
   ],
   providers: [

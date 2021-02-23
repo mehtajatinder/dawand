@@ -13,6 +13,8 @@ export interface AccountResponseData {
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
+  public apiUrl ='http://localhost:8080'
+
   user = new BehaviorSubject<any>(null);
   constructor(private httpClient: HttpClient, private router: Router) {}
 
@@ -30,6 +32,11 @@ export class AccountService {
           this.handleAuthentication(resData.token, resData.userId);
         })
       );
+  }
+  GetUserDetailedInfo(userid: any){
+    return this.httpClient.get(
+      this.apiUrl+ `/dashboard/${userid}`
+    )
   }
   LogoutUser() {
     this.user.next(null);

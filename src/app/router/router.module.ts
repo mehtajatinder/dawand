@@ -21,7 +21,7 @@ const routes = [
   {
     path: 'user-dashboard',
     loadChildren: () =>
-      import('../account/user-dashboard/user-dashboard.module').then((m) => {
+      import('../user-dashboard/user-dashboard.module').then((m) => {
         return m.UserDashboardModule;
       }),
   },

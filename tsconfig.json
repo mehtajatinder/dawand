@@ -20,14 +20,14 @@
       "es2018",
       "dom"
     ],
-    // "strictPropertyInitialization": false,
-    // "noImplicitAny": false
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-    // "strictPropertyInitialization": false
+     "strictPropertyInitialization": false
 
   },
 

@@ -24,7 +24,7 @@ const routes: Routes = [
     path: 'dashboard',
      canLoad: [authGaurd],
     loadChildren: () =>
-      import('./account/user-dashboard/user-dashboard.module').then(
+      import('./user-dashboard/user-dashboard.module').then(
         (module) => {
           return  module.UserDashboardModule;
         }
