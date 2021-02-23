@@ -1,27 +1,29 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <h2 class="navbar-brand" routerLink="/">Daswand</h2>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+    <h2 class="navbar-brand" routerLink="/" style="margin: 0;
+    font-weight: bold;
+    color: #444444; cursor: pointer">DASWANDH</h2>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    </button> -->
+    <div class="" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
             *ngIf="!isAuthenticated">Home</a>
           <a class="nav-link" routerLink="/dashboard" routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }" *ngIf="isAuthenticated">Dashboard</a>
-        </li>
+        </li> -->
 
         <li class="nav-item" *ngIf="!isAuthenticated">
-          <a class="nav-link" routerLink="/login" [routerLinkActive]="['active']">Login</a>
+          <a class="nav-link fontB" routerLink="/login" [routerLinkActive]="['active']">LOGIN</a>
         </li>
-        <li class="nav-item" *ngIf="!isAuthenticated">
-          <a class="nav-link" routerLink="/register" [routerLinkActive]="['active']">Register</a>
+        <li class="nav-item"  *ngIf="!isAuthenticated">
+          <a class="nav-link fontB" routerLink="/register" [routerLinkActive]="['active']">REGISTER</a>
         </li>
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a class="nav-link" routerLink="/register" [routerLinkActive]="['active']" (click)="LogoutUser()">Log out</a>
+          <a class="nav-link fontB" routerLink="/register" [routerLinkActive]="['active']" (click)="LogoutUser()">LOG OUT</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" routerLink="/user-dashboard" [routerLinkActive]="['active']">dashboard</a>

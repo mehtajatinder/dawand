@@ -17,6 +17,9 @@ html,body{
 .fontL{
     font-weight: 200;
 }
+.floatL{
+float: left;
+}
 .set{
     float: left;
     width: 100%
@@ -183,6 +186,9 @@ border-color: #3aaf9f
 .color-fade{
     color: #aaa
 }
+.btnContainer button + button{
+margin-left: 10px
+}
 .bg-color-primary,
 .btn-custom-primary{
     background-color: #3aaf9f;
@@ -251,11 +257,13 @@ margin-right: 5px;
 .sideNavigation ul li.download-center:before {
     background-position: center -2440px;
 }
-.sideNavigation ul li:hover{
+.sideNavigation ul li:hover,
+.sideNavigation ul li.active{
 background-color: #eef1f3;
 color: #555;
 cursor:pointer;
 }
+
 .userMainHeading{
     font-size: 20px;
     letter-spacing: 0.7px
@@ -323,6 +331,10 @@ font-weight: normal
     border-radius: 50%;
     border: 4px solid #efefef;
 }
+.profileImgWrapper.w80{
+    width: 80px;
+    height: 80px;   
+}
 img.full{
     width: 100%;
     height: 100%;
@@ -351,4 +363,57 @@ img.full{
     border: 1px solid #e1e1e1;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+.sliderWrapper{
+    background-image: url(assets/images/sliderImage.jpg);
+    background-size: cover;
+    background-position: 100%;
+    height: 600px;
+}
+.sliderWrapper:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.55);
+}
+.sliderImgContent{
+    display: table-cell;
+    vertical-align: middle;
+    height: 600px;
+    text-align: center;
+    color: #fff;
+    padding: 0px 28%
+}
+.sliderImgContent h2{
+    font-size: 36px;
+}
+.sliderImgContent .captionText{
+    font-size: 16px;
+    color: #bfbfbf;
+}
+.navbar{
+    padding: 10px 0px;
+}
+.navbar-nav li + li{
+    margin-left: 10px;
+}
+.navbar-nav .nav-link{
+    padding: 8px 16px  !important;
+}
+.navbar-nav .nav-link.active{
+    background-color: #3aaf9f;
+    color: #fff !important;
+
+}
+.singleTestimonialWrap{
+    padding: 16px;
+    font-size: 13px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.singleTestimonialWrap .supportingData{
+    float: left;
+    margin-top: 20px;
+    padding-left: 24px;
 }
