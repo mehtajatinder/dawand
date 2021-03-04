@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule } from '@angular/router';
-import { LandingPageComponent } from '../landing-page/landingPage.component';
+import { LandingPageComponent } from '../components/landing-page/landingPage.component';
 
 const routes = [
   { path: '', component: LandingPageComponent },
   {
     path: 'register',
     loadChildren: () =>
-      import('../account/register/register.module').then((m) => {
+      import('../components/account/register/register.module').then((m) => {
         return m.RegisterModule;
       }),
   },
   {
     path: 'login',
     loadChildren: () =>
-      import('../account/login/login.module').then((m) => {
+      import('../components/account/login/login.module').then((m) => {
         return m.LoginModule;
       }),
   },
   {
     path: 'user-dashboard',
     loadChildren: () =>
-      import('../user-dashboard/user-dashboard.module').then((m) => {
+      import('../components/user-dashboard/user-dashboard.module').then((m) => {
         return m.UserDashboardModule;
       }),
   },

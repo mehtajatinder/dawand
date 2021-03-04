@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
-import { User } from '../models/user';
+import { User } from '../../models/user';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 

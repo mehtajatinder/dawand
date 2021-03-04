@@ -11,7 +11,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-import { AccountService } from '../account/account.service';
+import { AccountService } from '../components/account/account.service';
 @Injectable({ providedIn: 'root' })
 export class authGaurd implements CanLoad, CanActivate, CanActivateChild {
   constructor(private accountService: AccountService, private router: Router) {}

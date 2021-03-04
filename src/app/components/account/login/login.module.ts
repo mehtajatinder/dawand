@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Input, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { LoginComponent } from './login.component';
@@ -8,4 +8,6 @@ import { LoginRoutingModule } from './login.router.module';
   declarations: [LoginComponent],
   imports: [LoginRoutingModule, SharedModule, FormsModule],
 })
-export class LoginModule {}
+export class LoginModule {
+  @Input() message: string;
+}

@@ -7,15 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 // import { TabsModule } from 'ngx-bootstrap/tabs';
 // import { ModalModule } from 'ngx-bootstrap/modal';
-import { LandingPageComponent } from './landing-page/landingPage.component';
+import { LandingPageComponent } from './components/landing-page/landingPage.component';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { routerModule } from './router/router.module';
 import { authInterceptor } from './interceptor/auth.interceptor';
-import { DataServiceService } from './Services/data-service.service';
+import { DataServiceService } from './services/data-service.service';
+import { placeholderDirective } from './shared/placeholder/placeholder.directive';
 
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent],
+  declarations: [AppComponent, LandingPageComponent,placeholderDirective],
   imports: [
     AppRoutingModule,
     HttpClientModule,

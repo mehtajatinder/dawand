@@ -6,7 +6,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { exhaustMap, catchError, take } from 'rxjs/operators';
-import { AccountService } from '../account/account.service';
+import { AccountService } from '../components/account/account.service';
 @Injectable()
 export class authInterceptor implements HttpInterceptor {
   constructor(private accountService: AccountService) {}
@@ -26,6 +26,7 @@ export class authInterceptor implements HttpInterceptor {
           catchError((err) => {
             if (err) {
               if (err.status == '401') {
+                
                 this.accountService.LogoutUser();
               }
             }
