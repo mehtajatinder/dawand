@@ -29,11 +29,6 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/dashboard');
       },
       (error) => {
-        // console.log(error);
-        // this.message = error.error.message;
-        // setTimeout(() => {
-        //   this.message = '';
-        // }, 2000);
         this.appcomponent.showAlert(error.error.message);
       }
     );

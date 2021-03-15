@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // import { UserDasboardComponent } from './account/user-dashboard/user-dasboard.component';
 import { authGaurd } from './authGaurd/authGaurd.service';
+import { canDeactivateGaurd } from './authGaurd/canDeactivateGaurd.service';
 import { LandingPageComponent } from './components/landing-page/landingPage.component';
+import { paymentComponent } from './components/payment/payment.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
@@ -22,11 +24,11 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-     canLoad: [authGaurd],
+    canLoad: [authGaurd],
     loadChildren: () =>
       import('./components/user-dashboard/user-dashboard.module').then(
         (module) => {
-          return  module.UserDashboardModule;
+          return module.UserDashboardModule;
         }
       ),
   },
@@ -35,13 +37,18 @@ const routes: Routes = [
     component: LandingPageComponent,
   },
   {
+    path: 'payment',
+    component: paymentComponent,
+    canDeactivate: [canDeactivateGaurd],
+  },
+  {
     path: '**',
     redirectTo: '/',
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{ enableTracing: false })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
