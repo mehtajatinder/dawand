@@ -38,6 +38,7 @@ const routes: Routes = [
   },
   {
     path: 'payment',
+    canActivate: [authGaurd],
     component: paymentComponent,
     canDeactivate: [canDeactivateGaurd],
   },
